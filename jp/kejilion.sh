@@ -1273,7 +1273,7 @@ add_swap() {
 	# 古い /swapfileを削除します
 	rm -f /swapfile
 
-	# 新しいスワップパーティションを作成します
+	# 创建新的 swap 分区
 	fallocate -l ${new_swap}M /swapfile
 	chmod 600 /swapfile
 	mkswap /swapfile
@@ -1801,7 +1801,7 @@ patch_wp_memory_limit() {
   local TARGET_DIR="/home/web/html"    # 路径写死
 
   find "$TARGET_DIR" -type f -name "wp-config.php" | while read -r FILE; do
-	# 古い定義を削除します
+	# 删除旧定义
 	sed -i "/define(['\"]WP_MEMORY_LIMIT['\"].*/d" "$FILE"
 	sed -i "/define(['\"]WP_MAX_MEMORY_LIMIT['\"].*/d" "$FILE"
 
@@ -5183,7 +5183,7 @@ optimize_high_performance() {
 	echo -e "${gl_lv}その他の最適化...${gl_bai}"
 	# レイテンシを減らすために、大きな透明なページを無効にします
 	echo never > /sys/kernel/mm/transparent_hugepage/enabled
-	# 禁用 NUMA balancing
+	# numaバランスを無効にします
 	sysctl -w kernel.numa_balancing=0 2>/dev/null
 
 
@@ -5598,10 +5598,10 @@ linux_trash() {
 		fi
 		;;
 	  4)
-		read -e -p "リサイクルビンをクリアすることを確認しますか？ [Y/N]：" confirm
+		read -e -p "确认清空回收站？[y/n]: " confirm
 		if [[ "$confirm" == "y" ]]; then
 		  trash-empty
-		  echo "リサイクルビンがクリアされました。"
+		  echo "回收站已清空。"
 		fi
 		;;
 	  *)
@@ -5613,13 +5613,13 @@ linux_trash() {
 
 
 
-# バックアップを作成します
+# 创建备份
 create_backup() {
-	send_stats "バックアップを作成します"
+	send_stats "创建备份"
 	local TIMESTAMP=$(date +"%Y%m%d%H%M%S")
 
-	# ユーザーにバックアップディレクトリを入力するように求めます
-	echo "バックアップ例を作成します："
+	# 提示用户输入备份目录
+	echo "创建备份示例："
 	echo "- 単一のディレクトリをバックアップします： /var /www"
 	echo "- バックアップ複数のディレクトリ： /etc /home /var /log"
 	echo "-directEnterはデフォルトのディレクトリ（ /etc /usr /home）を使用します"
@@ -7644,7 +7644,7 @@ linux_ldnmp() {
 	  echo "Redisポート：6379"
 	  echo ""
 	  echo "ウェブサイトURL：https：//$yuming"
-	  echo "バックグラウンドログインパス： /admin"
+	  echo "バックエンドログインパス： /admin"
 	  echo "------------------------"
 	  echo "ユーザー名：admin"
 	  echo "パスワード：管理者"
@@ -11324,7 +11324,7 @@ EOF
 				echo "23。カナダ時間24。メキシコの時間"
 				echo "25。ブラジル時間26。アルゼンチン時間"
 				echo "------------------------"
-				echo "31。UTCグローバル標準時間"
+				echo "31. UTC全球标准时间"
 				echo "------------------------"
 				echo "0。前のメニューに戻ります"
 				echo "------------------------"
@@ -12323,7 +12323,7 @@ while true; do
 	  echo -e "${gl_kjlan}バッチでタスクを実行します${gl_bai}"
 	  echo -e "${gl_kjlan}11. ${gl_bai}Tech Lionスクリプトをインストールします${gl_kjlan}12. ${gl_bai}システムを更新します${gl_kjlan}13. ${gl_bai}システムを掃除します"
 	  echo -e "${gl_kjlan}14. ${gl_bai}Dockerをインストールします${gl_kjlan}15. ${gl_bai}BBR3をインストールします${gl_kjlan}16. ${gl_bai}1G仮想メモリをセットアップします"
-	  echo -e "${gl_kjlan}17. ${gl_bai}タイムゾーンを上海に設定します${gl_kjlan}18. ${gl_bai}すべてのポートを開きます${gl_kjlan}51. ${gl_bai}カスタムコマンド"
+	  echo -e "${gl_kjlan}17. ${gl_bai}タイムゾーンを上海に設定します${gl_kjlan}18. ${gl_bai}すべてのポートを開きます${gl_kjlan}51. ${gl_bai}自定义指令"
 	  echo -e "${gl_kjlan}------------------------${gl_bai}"
 	  echo -e "${gl_kjlan}0.  ${gl_bai}メインメニューに戻ります"
 	  echo -e "${gl_kjlan}------------------------${gl_bai}"
@@ -12331,8 +12331,8 @@ while true; do
 
 	  case $sub_choice in
 		  1)
-			  send_stats "クラスターサーバーを追加します"
-			  read -e -p "サーバー名：" server_name
+			  send_stats "添加集群服务器"
+			  read -e -p "服务器名称: " server_name
 			  read -e -p "サーバーIP：" server_ip
 			  read -e -p "サーバーポート（22）：" server_port
 			  local server_port=${server_port:-22}
@@ -12434,7 +12434,7 @@ echo "------------------------"
 echo -e "${gl_huang}ブリックワーカー、四半期あたり49ドル、米国CN2GIA、日本ソフトバンク、2つのコア、1Gメモリ、20gハードドライブ、1か月あたり1Tトラフィック${gl_bai}"
 echo -e "${gl_bai}ウェブサイト：https：//bandwagonhost.com/aff.php?aff = 69004&pid=87${gl_bai}"
 echo "------------------------"
-echo -e "${gl_lan}dmit四半期あたり28ドルUS CN2GIA 1コア2Gメモリ20Gハードドライブ800gトラフィック${gl_bai}"
+echo -e "${gl_lan}DMIT 28刀每季 美国CN2GIA 1核心 2G内存 20G硬盘 800G流量每月${gl_bai}"
 echo -e "${gl_bai}ウェブサイト：https：//www.dmit.io/aff.php?aff = 4966&pid=100${gl_bai}"
 echo "------------------------"
 echo -e "${gl_zi}V.PS月額6.9 $ 6.9東京ソフトバンク2コア1Gメモリ20gハードドライブ1Tトラフィック${gl_bai}"
@@ -12473,7 +12473,7 @@ while true; do
 	clear
 	echo "ログを更新します"
 	echo "------------------------"
-	echo "すべてのログ：${gh_proxy}raw.githubusercontent.com/kejilion/sh/main/kejilion_sh_log.txt"
+	echo "全部日志: ${gh_proxy}raw.githubusercontent.com/kejilion/sh/main/kejilion_sh_log.txt"
 	echo "------------------------"
 
 	curl -s ${gh_proxy}raw.githubusercontent.com/kejilion/sh/main/kejilion_sh_log.txt | tail -n 30

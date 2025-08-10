@@ -4943,8 +4943,8 @@ elrepo_install() {
 		linux_Settings
 	fi
 	# Print detected operating system information
-	echo "Operating system detected:$os_name $os_version"
-	# 根据系统版本安装对应的 ELRepo 仓库配置
+	echo "Detected operating systems:$os_name $os_version"
+	# Install the corresponding ELRepo warehouse configuration according to the system version
 	if [[ "$os_version" == 8 ]]; then
 		echo "Install ELRepo repository configuration (version 8)..."
 		yum -y install https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm
@@ -7644,7 +7644,7 @@ linux_ldnmp() {
 	  echo "Redis port: 6379"
 	  echo ""
 	  echo "Website url: https://$yuming"
-	  echo "Background login path: /admin"
+	  echo "Backend login path: /admin"
 	  echo "------------------------"
 	  echo "Username: admin"
 	  echo "Password: admin"
@@ -11538,7 +11538,7 @@ EOF
 
 						  ;;
 					  2)
-						  read -e -p "Please enter the keywords for parsing content that need to be deleted:" delhost
+						  read -e -p "Please enter the keywords of parsing content that need to be deleted:" delhost
 						  sed -i "/$delhost/d" /etc/hosts
 						  send_stats "Local host parsing and deletion"
 						  ;;
@@ -12664,7 +12664,7 @@ echo "Install load balancing k loadbalance |k load balancing"
 echo "Firewall panel k fhq |k firewall"
 echo "Open port k dkdk 8080 |k Open port 8080"
 echo "Close port k gbdk 7800 |k Close port 7800"
-echo "放行IP              k fxip 127.0.0.0/8 |k 放行IP 127.0.0.0/8"
+echo "Release IP k fxip 127.0.0.0/8 |k Release IP 127.0.0.0/8"
 echo "Block IP k zzip 177.5.25.36 |k Block IP 177.5.25.36"
 
 
