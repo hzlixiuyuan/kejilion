@@ -3658,7 +3658,7 @@ add_forwarding_service() {
 	send_stats "添加frp內網服務"
 	# 提示用戶輸入服務名稱和轉發信息
 	read -e -p "請輸入服務名稱:" service_name
-	read -e -p "請輸入轉發類型 (tcp/udp) [回車默認tcp]:" service_type
+	read -e -p "請輸入轉發類型 (tcp/udp) [回​​車默認tcp]:" service_type
 	local service_type=${service_type:-tcp}
 	read -e -p "請輸入內網IP [回車默認127.0.0.1]:" local_ip
 	local local_ip=${local_ip:-127.0.0.1}
@@ -10782,7 +10782,7 @@ linux_work() {
 			  ;;
 
 		  22)
-			  read -e -p "請輸入你創建或進入的工作區名稱，如1001 kj001 work1:" SESSION_NAME
+			  read -e -p "請輸入你創建或進入的工作區名稱，如1​​001 kj001 work1:" SESSION_NAME
 			  tmux_run
 			  send_stats "自定義工作區"
 			  ;;

@@ -5910,7 +5910,7 @@ ssh_manager() {
 	while true; do
 		clear
 		echo "SSH Remote Connection Tool"
-		echo "Can be connected to other Linux systems via SSH"
+		echo "Can connect to other Linux systems via SSH"
 		echo "------------------------"
 		list_connections
 		echo "1. Create a new connection 2. Use a connection 3. Delete a connection"
@@ -8431,7 +8431,7 @@ linux_panel() {
 	  echo -e "${gl_kjlan}21.  ${gl_bai}VScode web version${gl_kjlan}22.  ${gl_bai}UptimeKuma monitoring tool"
 	  echo -e "${gl_kjlan}23.  ${gl_bai}Memos web page memo${gl_kjlan}24.  ${gl_bai}Webtop Remote Desktop Web Edition${gl_huang}★${gl_bai}"
 	  echo -e "${gl_kjlan}25.  ${gl_bai}Nextcloud network disk${gl_kjlan}26.  ${gl_bai}QD-Today timing task management framework"
-	  echo -e "${gl_kjlan}27.  ${gl_bai}Dockge Container Stack Management Panel${gl_kjlan}28.  ${gl_bai}LibreSpeed Speed Test Tool"
+	  echo -e "${gl_kjlan}27.  ${gl_bai}Dockge Container Stack Management Panel${gl_kjlan}28.  ${gl_bai}LibreSpeed ​​Speed ​​Test Tool"
 	  echo -e "${gl_kjlan}29.  ${gl_bai}searxng aggregation search site${gl_huang}★${gl_bai}                 ${gl_kjlan}30.  ${gl_bai}PhotoPrism Private Album System"
 	  echo -e "${gl_kjlan}------------------------"
 	  echo -e "${gl_kjlan}31.  ${gl_bai}StirlingPDF tool collection${gl_kjlan}32.  ${gl_bai}drawio free online charting software${gl_huang}★${gl_bai}"
@@ -11970,7 +11970,7 @@ EOF
 
 			  echo "Privacy and Security"
 			  echo "The script will collect data on user functions, optimize the script experience, and create more fun and useful functions."
-			  echo "Will collect the script version number, usage time, system version, CPU architecture, country of the machine and the name of the function used,"
+			  echo "Will collect the script version number, usage time, system version, CPU architecture, country of the machine and the name of the functions used,"
 			  echo "------------------------------------------------"
 			  echo -e "Current status:$status_message"
 			  echo "--------------------"
