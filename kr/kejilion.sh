@@ -1556,7 +1556,7 @@ fi
 
 add_yuming() {
 	  ip_address
-	  echo -e "먼저 도메인 이름을 로컬 IP로 해결합니다.${gl_huang}$ipv4_address  $ipv6_address${gl_bai}"
+	  echo -e "먼저 도메인 이름을 기본 IP로 해결합니다.${gl_huang}$ipv4_address  $ipv6_address${gl_bai}"
 	  read -e -p "IP 또는 해결 된 도메인 이름을 입력하십시오." yuming
 }
 
@@ -5769,7 +5769,7 @@ list_connections() {
 # 새 연결을 추가하십시오
 add_connection() {
 	send_stats "새 연결을 추가하십시오"
-	echo "새 연결 예제 :"
+	echo "새 연결을 만드는 예 :"
 	echo "- 연결 이름 : my_server"
 	echo "-IP 주소 : 192.168.1.100"
 	echo "- 사용자 이름 : 루트"
@@ -11483,7 +11483,7 @@ EOF
 								  (crontab -l ; echo "0 0 * * $weekday $newquest") | crontab - > /dev/null 2>&1
 								  ;;
 							  3)
-								  read -e -p "매일 작업을 수행 할 시간을 선택하십시오. (시간, 0-23) :" hour
+								  read -e -p "매일 작업을 수행 할시기를 선택 하시겠습니까? (시간, 0-23) :" hour
 								  (crontab -l ; echo "0 $hour * * * $newquest") | crontab - > /dev/null 2>&1
 								  ;;
 							  4)
@@ -11986,7 +11986,7 @@ EOF
 					  sed -i 's/^ENABLE_STATS="false"/ENABLE_STATS="true"/' /usr/local/bin/k
 					  sed -i 's/^ENABLE_STATS="false"/ENABLE_STATS="true"/' ~/kejilion.sh
 					  echo "수집이 활성화되었습니다"
-					  send_stats "개인 정보 보호 및 보안 컬렉션이 활성화되었습니다"
+					  send_stats "수집을 위해 개인 정보 및 보안이 가능했습니다"
 					  ;;
 				  2)
 					  cd ~
