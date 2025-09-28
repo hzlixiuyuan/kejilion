@@ -11538,7 +11538,7 @@ EOF
 
 						  ;;
 					  2)
-						  read -e -p "削除する必要があるコンテンツを解析するために、キーワードを入力してください。" delhost
+						  read -e -p "削除する必要があるコンテンツの解析のキーワードを入力してください。" delhost
 						  sed -i "/$delhost/d" /etc/hosts
 						  send_stats "ローカルホストの解析と削除"
 						  ;;
