@@ -888,7 +888,7 @@ open_port() {
 
 		if ! iptables -C INPUT -p udp --dport $port -j ACCEPT 2>/dev/null; then
 			iptables -I INPUT 1 -p udp --dport $port -j ACCEPT
-			echo "ポートがオープンされました$port"
+			echo "ポートがオープンしました$port"
 		fi
 	done
 
@@ -2440,7 +2440,7 @@ check_docker_image_update() {
 	# 公式画像のサポートを追加
 	[[ "$image_repo" != */* ]] && image_repo="library/$image_repo"
 
-	# Docker Hub APIからイメージのリリース時刻を取得する
+	# Docker Hub APIからイメージのリリース時間を取得する
 	local hub_info=$(curl -s "https://hub.docker.com/v2/repositories/$image_repo/tags/$image_tag")
 	local last_updated=$(echo "$hub_info" | jq -r '.last_updated' 2>/dev/null)
 
@@ -5318,7 +5318,7 @@ Kernel_optimize() {
 	root_use
 	while true; do
 	  clear
-	  send_stats "Linux カーネルのチューニング管理"
+	  send_stats "Linuxカーネルチューニング管理"
 	  echo "Linuxシステムのカーネルパラメータの最適化"
 	  echo "ビデオ紹介: https://www.bilibili.com/video/BV1Kb421J7yg?t=0.1"
 	  echo "------------------------------------------------"
@@ -5353,7 +5353,7 @@ Kernel_optimize() {
 			  cd ~
 			  clear
 			  optimize_web_server
-			  send_stats "ウェブサイト最適化モデル"
+			  send_stats "ウェブサイト最適化モード"
 			  ;;
 		  4)
 			  cd ~
@@ -5613,9 +5613,9 @@ linux_trash() {
 
 
 
-# バックアップを作成する
+# バックアップの作成
 create_backup() {
-	send_stats "バックアップを作成する"
+	send_stats "バックアップの作成"
 	local TIMESTAMP=$(date +"%Y%m%d%H%M%S")
 
 	# ユーザーにバックアップ ディレクトリの入力を求めるプロンプトを表示する
@@ -5657,7 +5657,7 @@ create_backup() {
 		echo "- $path"
 	done
 
-	# バックアップを作成する
+	# バックアップの作成
 	echo "バックアップの作成$BACKUP_NAME..."
 	install tar
 	tar -czvf "$BACKUP_DIR/$BACKUP_NAME" "${BACKUP_PATHS[@]}"
@@ -5966,7 +5966,7 @@ mount_partition() {
 	MOUNT_POINT="/mnt/$PARTITION"
 	mkdir -p "$MOUNT_POINT"
 
-	# パーティションをマウントする
+	# パーティションのマウント
 	mount "/dev/$PARTITION" "$MOUNT_POINT"
 
 	if [ $? -eq 0 ]; then
@@ -6078,7 +6078,7 @@ disk_manager() {
 	send_stats "ハードディスク管理機能"
 	while true; do
 		clear
-		echo "ハードディスクのパーティション管理"
+		echo "ハードドライブのパーティション管理"
 		echo -e "${gl_huang}この機能は内部テスト中であるため、運用環境では使用しないでください。${gl_bai}"
 		echo "------------------------"
 		list_partitions
@@ -11087,8 +11087,8 @@ EOF
 						;;
 					2)
 						sysctl -w net.ipv6.conf.all.disable_ipv6=0 > /dev/null 2>&1
-						echo "IPv6優先に切り替えました"
-						send_stats "IPv6優先に切り替えました"
+						echo "最初にIPv6に切り替えました"
+						send_stats "最初にIPv6に切り替えました"
 						;;
 
 					3)
@@ -11312,7 +11312,7 @@ EOF
 				echo "3. 東京、日本時間 4. ソウル、韓国時間"
 				echo "5. シンガポール時間 6. インド、コルカタ時間"
 				echo "7. アラブ首長国連邦、ドバイ時間 8. オーストラリア、シドニー時間"
-				echo "9. タイ・バンコク時間"
+				echo "9.タイ・バンコク時間"
 				echo "------------------------"
 				echo "ヨーロッパ"
 				echo "11. ロンドン、イギリス時間 12. パリ、フランス時間"
@@ -12289,7 +12289,7 @@ run_commands_on_servers() {
 		local username=${SERVER_ARRAY[i+3]}
 		local password=${SERVER_ARRAY[i+4]}
 		echo
-		echo -e "${gl_huang}に接続する$name ($hostname)...${gl_bai}"
+		echo -e "${gl_huang}に接続します$name ($hostname)...${gl_bai}"
 		# sshpass -p "$password" ssh -o StrictHostKeyChecking=no "$username@$hostname" -p "$port" "$1"
 		sshpass -p "$password" ssh -t -o StrictHostKeyChecking=no "$username@$hostname" -p "$port" "$1"
 	done
@@ -12318,7 +12318,7 @@ while true; do
 	  echo -e "${gl_kjlan}------------------------${gl_bai}"
 	  echo -e "${gl_kjlan}サーバーリスト管理${gl_bai}"
 	  echo -e "${gl_kjlan}1.  ${gl_bai}サーバーの追加${gl_kjlan}2.  ${gl_bai}サーバーの削除${gl_kjlan}3.  ${gl_bai}サーバーの編集"
-	  echo -e "${gl_kjlan}4.  ${gl_bai}バックアップクラスター${gl_kjlan}5.  ${gl_bai}クラスターを復元する"
+	  echo -e "${gl_kjlan}4.  ${gl_bai}バックアップクラスタ${gl_kjlan}5.  ${gl_bai}クラスターを復元する"
 	  echo -e "${gl_kjlan}------------------------${gl_bai}"
 	  echo -e "${gl_kjlan}タスクをバッチで実行する${gl_bai}"
 	  echo -e "${gl_kjlan}11. ${gl_bai}テクノロジ ライオン スクリプトをインストールする${gl_kjlan}12. ${gl_bai}アップデートシステム${gl_kjlan}13. ${gl_bai}システムをクリーンアップする"
@@ -12356,7 +12356,7 @@ while true; do
 
 		  4)
 			  clear
-			  send_stats "バックアップクラスター"
+			  send_stats "バックアップクラスタ"
 			  echo -e "変更してください${gl_huang}/root/cluster/servers.py${gl_bai}ファイルをダウンロードしてバックアップを完了してください。"
 			  break_end
 			  ;;
@@ -12440,7 +12440,7 @@ echo "------------------------"
 echo -e "${gl_zi}V.PS 月額 6.9 ドル 東京ソフトバンク 2 コア 1G メモリ 20G ハードドライブ 月額 1T トラフィック${gl_bai}"
 echo -e "${gl_bai}URL：https://vps.hosting/cart/tokyo-cloud-kvm-vps/?id=148&?affid=1355&?affid=1355${gl_bai}"
 echo "------------------------"
-echo -e "${gl_kjlan}さらに人気のある VPS セール${gl_bai}"
+echo -e "${gl_kjlan}さらに人気のある VPS オファー${gl_bai}"
 echo -e "${gl_bai}ウェブサイト：https://kejilion.pro/topvps/${gl_bai}"
 echo "------------------------"
 echo ""
@@ -12625,7 +12625,7 @@ done
 
 
 k_info() {
-send_stats "k コマンドリファレンスの使用例"
+send_stats "k コマンドのリファレンス例"
 echo "-------------------"
 echo "ビデオ紹介: https://www.bilibili.com/video/BV1ib421E7it?t=0.1"
 echo "以下は、k コマンドの参考使用例です。"

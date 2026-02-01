@@ -911,7 +911,7 @@ close_port() {
 		iptables -D INPUT -p tcp --dport $port -j ACCEPT 2>/dev/null
 		iptables -D INPUT -p udp --dport $port -j ACCEPT 2>/dev/null
 
-		# Add a shutdown rule
+		# Add shutdown rule
 		if ! iptables -C INPUT -p tcp --dport $port -j DROP 2>/dev/null; then
 			iptables -I INPUT 1 -p tcp --dport $port -j DROP
 		fi
@@ -5353,7 +5353,7 @@ Kernel_optimize() {
 			  cd ~
 			  clear
 			  optimize_web_server
-			  send_stats "Website optimization model"
+			  send_stats "Website optimization mode"
 			  ;;
 		  4)
 			  cd ~
@@ -5613,9 +5613,9 @@ linux_trash() {
 
 
 
-# Create a backup
+# Create backup
 create_backup() {
-	send_stats "Create a backup"
+	send_stats "Create backup"
 	local TIMESTAMP=$(date +"%Y%m%d%H%M%S")
 
 	# Prompt user for backup directory
@@ -5657,7 +5657,7 @@ create_backup() {
 		echo "- $path"
 	done
 
-	# Create a backup
+	# Create backup
 	echo "Creating backup$BACKUP_NAME..."
 	install tar
 	tar -czvf "$BACKUP_DIR/$BACKUP_NAME" "${BACKUP_PATHS[@]}"
@@ -6078,7 +6078,7 @@ disk_manager() {
 	send_stats "Hard disk management function"
 	while true; do
 		clear
-		echo "Hard disk partition management"
+		echo "Hard drive partition management"
 		echo -e "${gl_huang}This feature is under internal testing and should not be used in a production environment.${gl_bai}"
 		echo "------------------------"
 		list_partitions
@@ -6162,7 +6162,7 @@ add_task() {
 				password_or_key="$key_file"
 				auth_method="key"
 			else
-				echo "Invalid key content!"
+				echo "无效的密钥内容！"
 				return
 			fi
 			;;
@@ -8418,7 +8418,7 @@ linux_panel() {
 	  echo -e "${gl_kjlan}------------------------"
 	  echo -e "${gl_kjlan}1.   ${gl_bai}Pagoda panel official version${gl_kjlan}2.   ${gl_bai}aaPanel Pagoda International Version"
 	  echo -e "${gl_kjlan}3.   ${gl_bai}1Panel new generation management panel${gl_kjlan}4.   ${gl_bai}NginxProxyManager visualization panel"
-	  echo -e "${gl_kjlan}5.   ${gl_bai}OpenList multi-store file list program${gl_kjlan}6.   ${gl_bai}Ubuntu Remote Desktop Web Edition"
+	  echo -e "${gl_kjlan}5.   ${gl_bai}OpenList multi-store file list program${gl_kjlan}6.   ${gl_bai}Ubuntu Remote Desktop Web Version"
 	  echo -e "${gl_kjlan}7.   ${gl_bai}Nezha Probe VPS Monitoring Panel${gl_kjlan}8.   ${gl_bai}QB offline BT magnetic download panel"
 	  echo -e "${gl_kjlan}9.   ${gl_bai}Poste.io mail server program${gl_kjlan}10.  ${gl_bai}RocketChat multi-person online chat system"
 	  echo -e "${gl_kjlan}------------------------"
@@ -11087,8 +11087,8 @@ EOF
 						;;
 					2)
 						sysctl -w net.ipv6.conf.all.disable_ipv6=0 > /dev/null 2>&1
-						echo "Switched to IPv6 priority"
-						send_stats "Switched to IPv6 priority"
+						echo "Switched to IPv6 first"
+						send_stats "Switched to IPv6 first"
 						;;
 
 					3)
@@ -12289,7 +12289,7 @@ run_commands_on_servers() {
 		local username=${SERVER_ARRAY[i+3]}
 		local password=${SERVER_ARRAY[i+4]}
 		echo
-		echo -e "${gl_huang}connect to$name ($hostname)...${gl_bai}"
+		echo -e "${gl_huang}Connect to$name ($hostname)...${gl_bai}"
 		# sshpass -p "$password" ssh -o StrictHostKeyChecking=no "$username@$hostname" -p "$port" "$1"
 		sshpass -p "$password" ssh -t -o StrictHostKeyChecking=no "$username@$hostname" -p "$port" "$1"
 	done
@@ -12440,7 +12440,7 @@ echo "------------------------"
 echo -e "${gl_zi}V.PS 6.9 dollars per month Tokyo Softbank 2 cores 1G memory 20G hard drive 1T traffic per month${gl_bai}"
 echo -e "${gl_bai}URL: https://vps.hosting/cart/tokyo-cloud-kvm-vps/?id=148&?affid=1355&?affid=1355${gl_bai}"
 echo "------------------------"
-echo -e "${gl_kjlan}More popular VPS offers${gl_bai}"
+echo -e "${gl_kjlan}More popular VPS deals${gl_bai}"
 echo -e "${gl_bai}Website: https://kejilion.pro/topvps/${gl_bai}"
 echo "------------------------"
 echo ""
