@@ -57,7 +57,7 @@ CheckFirstRun_true() {
 
 
 
-# This function collects function buried information and records the current script version number, usage time, system version, CPU architecture, machine country and function name used by the user. It does not involve any sensitive information, so don’t worry! Please believe me!
+# This function collects function hidden information and records the current script version number, usage time, system version, CPU architecture, machine country and function name used by the user. It does not involve any sensitive information, please rest assured! Please believe me!
 # Why is this function designed? The purpose is to better understand the functions that users like to use, and to further optimize the functions and launch more functions that meet user needs.
 # The full text can be searched for the send_stats function call location. It is transparent and open source. If you have any concerns, you can refuse to use it.
 
@@ -2541,7 +2541,7 @@ clear_container_rules() {
 		iptables -D DOCKER-USER -p tcp -d "$container_ip" -j DROP
 	fi
 
-	# Clear the rules that allow specified IPs
+	# Clear the rules that allow the specified IP
 	if iptables -C DOCKER-USER -p tcp -s "$allowed_ip" -d "$container_ip" -j ACCEPT &>/dev/null; then
 		iptables -D DOCKER-USER -p tcp -s "$allowed_ip" -d "$container_ip" -j ACCEPT
 	fi
@@ -2560,7 +2560,7 @@ clear_container_rules() {
 		iptables -D DOCKER-USER -p udp -d "$container_ip" -j DROP
 	fi
 
-	# Clear the rules that allow specified IPs
+	# Clear the rules that allow the specified IP
 	if iptables -C DOCKER-USER -p udp -s "$allowed_ip" -d "$container_ip" -j ACCEPT &>/dev/null; then
 		iptables -D DOCKER-USER -p udp -s "$allowed_ip" -d "$container_ip" -j ACCEPT
 	fi
@@ -4470,7 +4470,7 @@ sed -i 's/^\s*#\?\s*PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_confi
 sed -i 's/^\s*#\?\s*PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
 rm -rf /etc/ssh/sshd_config.d/* /etc/ssh/ssh_config.d/*
 restart_ssh
-echo -e "${gl_lv}ROOT login setup is complete!${gl_bai}"
+echo -e "${gl_lv}ROOT login setup is completed!${gl_bai}"
 
 }
 
@@ -6162,7 +6162,7 @@ add_task() {
 				password_or_key="$key_file"
 				auth_method="key"
 			else
-				echo "无效的密钥内容！"
+				echo "Invalid key content!"
 				return
 			fi
 			;;
@@ -7102,7 +7102,7 @@ linux_test() {
 	  echo -e "${gl_kjlan}14.  ${gl_bai}nxtrace fast backhaul test script"
 	  echo -e "${gl_kjlan}15.  ${gl_bai}nxtrace specifies IP backhaul test script"
 	  echo -e "${gl_kjlan}16.  ${gl_bai}ludashi2020 three network line test"
-	  echo -e "${gl_kjlan}17.  ${gl_bai}i-abc multi-function speed test script"
+	  echo -e "${gl_kjlan}17.  ${gl_bai}i-abc multifunctional speed test script"
 	  echo -e "${gl_kjlan}18.  ${gl_bai}NetQuality network quality check script${gl_huang}★${gl_bai}"
 
 	  echo -e "${gl_kjlan}------------------------"
@@ -8727,7 +8727,7 @@ linux_panel() {
 				check_docker_image_update $docker_name
 
 				clear
-				echo -e "postal services$check_docker $update_status"
+				echo -e "postal service$check_docker $update_status"
 				echo "poste.io is an open source mail server solution,"
 				echo "Video introduction: https://www.bilibili.com/video/BV1wv421C71t?t=0.1"
 
@@ -10654,7 +10654,7 @@ linux_work() {
 	  echo -e "${gl_kjlan}2.   ${gl_bai}Work Area 2"
 	  echo -e "${gl_kjlan}3.   ${gl_bai}Work Area 3"
 	  echo -e "${gl_kjlan}4.   ${gl_bai}Work Area 4"
-	  echo -e "${gl_kjlan}5.   ${gl_bai}Workspace No. 5"
+	  echo -e "${gl_kjlan}5.   ${gl_bai}Work Area 5"
 	  echo -e "${gl_kjlan}6.   ${gl_bai}Work Area 6"
 	  echo -e "${gl_kjlan}7.   ${gl_bai}Work Area 7"
 	  echo -e "${gl_kjlan}8.   ${gl_bai}Work Area 8"
@@ -11890,7 +11890,7 @@ EOF
 
 				  echo "------------------------------------------------"
 				  linux_clean
-				  echo -e "[${gl_lv}OK${gl_bai}] 2/10. Clean up system junk files"
+				  echo -e "[${gl_lv}OK${gl_bai}] 2/10. 清理系统垃圾文件"
 
 				  echo "------------------------------------------------"
 				  add_swap 1024
@@ -11992,7 +11992,7 @@ EOF
 					  cd ~
 					  sed -i 's/^ENABLE_STATS="true"/ENABLE_STATS="false"/' /usr/local/bin/k
 					  sed -i 's/^ENABLE_STATS="true"/ENABLE_STATS="false"/' ~/kejilion.sh
-					  echo "Collection closed"
+					  echo "已关闭采集"
 					  send_stats "Privacy and security collection has been turned off"
 					  ;;
 				  *)
@@ -12440,7 +12440,7 @@ echo "------------------------"
 echo -e "${gl_zi}V.PS 6.9 dollars per month Tokyo Softbank 2 cores 1G memory 20G hard drive 1T traffic per month${gl_bai}"
 echo -e "${gl_bai}URL: https://vps.hosting/cart/tokyo-cloud-kvm-vps/?id=148&?affid=1355&?affid=1355${gl_bai}"
 echo "------------------------"
-echo -e "${gl_kjlan}More popular VPS deals${gl_bai}"
+echo -e "${gl_kjlan}More popular VPS offers${gl_bai}"
 echo -e "${gl_bai}Website: https://kejilion.pro/topvps/${gl_bai}"
 echo "------------------------"
 echo ""
